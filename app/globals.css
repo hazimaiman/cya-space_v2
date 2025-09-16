@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll for in-page anchors */
+html { scroll-behavior: smooth; }
+
+/* Base structure similar to original */
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+/* Light theme background + subtle pattern */
+body {
+  background-color: theme('colors.lightbg');
+  background-image: url('https://www.transparenttextures.com/patterns/arches.png');
+}
+
+/* Dark theme background + carbon pattern when .dark is on <html> */
+.dark body {
+  background-color: theme('colors.darkbg');
+  background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png');
+}
+
+/* Hero image bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+.hero-image img {
+  animation: bounce 2s infinite;
+}
+
+/* Logo cloud speed control using CSS variable */
+.logo-cloud {
+  animation: logo-cloud var(--logo-speed, 16s) linear infinite;
+}
+@keyframes logo-cloud {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 4rem)); }
+}
+.logo-cloud-group:hover .logo-cloud {
+  --logo-speed: 35s; /* slow on hover */
+}
+
