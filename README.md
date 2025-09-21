@@ -1,4 +1,4 @@
-CyA Space — Next.js (App Router) + Tailwind Migration
+CyA Space — Next.js (App Router) + Tailwind
 
 
 Getting Started
