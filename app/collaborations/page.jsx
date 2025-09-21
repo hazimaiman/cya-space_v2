@@ -59,14 +59,14 @@ const testimonials = [
       "He bridged management and engineering: translated goals into a workable backlog, led the company website build, reviewed code, and made trade-offs easy for non-technical stakeholders.",
     name: "Tuan Haji Awang",
     title: "Technical Director, Tijan Aisyah Telco",
-    image: "/Tijan.jfif",
+    image: "/Tijan.jpg",
   },
   {
     quote:
       "As CEO I value clear updates. Hazim explained risks, options, and impact in simple business terms, so decisions and approvals were fast and confident.",
     name: "Dato' Haji Shahrul",
     title: "CEO, Tijan Aisyah Telco",
-    image: "/Tijan.jfif",
+    image: "/Tijan.jpg",
   },
   {
     quote:

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const logos = [
   { name: "IMS", url: "/IMS.png" },
-  { name: "TIJANAT", url: "/Tijan.jfif" },
+  { name: "TIJANAT", url: "/Tijan.jpg" },
   { name: "Hai Crunch", url: "/HaiCrunch.jpg" },
   { name: "NDeco", url: "/Ndeco.jpg" },
   { name: "SneakersLab", url: "/SNEAKERSLAB.png" },
