@@ -1,12 +1,16 @@
-import './globals.css'
-import { ThemeProvider } from '../components/ThemeProvider'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
+import "./globals.css";
+import { ThemeProvider } from "../components/ThemeProvider";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 export const metadata = {
-  title: 'CyA Space',
-  description: 'Next.js App Router port with Tailwind',
-}
+  title: "Hazim Aiman",
+  description:
+    "Eager to explore the development world and continuously learn new technologies to grow.",
+  icons: {
+    icons: "../public/profile.jpg",
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -15,14 +19,11 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Nav />
-            <main className="flex-1">
-              {children}
-            </main>
+            <main className="flex-1">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
-
