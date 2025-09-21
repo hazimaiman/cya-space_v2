@@ -6,58 +6,61 @@ import { motion } from "framer-motion";
 import {
   SiNextdotjs,
   SiTailwindcss,
-  SiFramer,
-  SiFirebase,
   SiJavascript,
-  SiFigma,
+  SiReact,
+  SiTypescript,
+  SiWhatsapp,
+  SiShopify,
+  SiDesignernews,
 } from "react-icons/si";
+
+// ✅ Static import for your local image
+import zuliamWebsite from "../../public/zuliam_website.JPG";
+import cakeAnis from "../../public/cakeanis_website.png";
+import tijanTelco from "../../public/tijan_website.JPG";
+import zuliamShopify from "../../public/zuliam_web.png";
 
 const projects = [
   {
-    title: "Zuliam",
+    title: "züliäm",
     description:
-      "A mission control platform with live telemetry, scheduling insights, and collaborative checklists for distributed aerospace teams.",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+      "Official company website showcasing züliäm’s footwear products and brand identity.",
+    image: zuliamWebsite,
     href: "https://zuliam.com",
-    stack: [SiNextdotjs, SiTailwindcss, SiFramer],
+    stack: [SiNextdotjs, SiTailwindcss, SiJavascript],
   },
   {
-    title: "CAKENIS",
+    title: "Tijan Telco",
     description:
-      "Composable storefront experience that blends guided storytelling with realtime inventory to boost discovery for boutique brands.",
-    image:
-      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80",
-    href: "https://example.com/nebula",
-    stack: [SiNextdotjs, SiJavascript, SiFirebase],
+      "Corporate website introducing Tijan Telco’s services, company profile, and industry presence.",
+    image: tijanTelco,
+    href: "/",
+    stack: [SiReact, SiTailwindcss],
   },
   {
-    title: "TIJAN",
+    title: "züliäm shopify",
     description:
-      "Knowledge workspace that maps qualitative insights, moodboards, and product briefs into a visually searchable galaxy.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    href: "https://example.com/lumen",
-    stack: [SiNextdotjs, SiTailwindcss, SiFramer],
-  },
-  {
-    title: "MISPAW IF SEMPAT",
-    description:
-      "Knowledge workspace that maps qualitative insights, moodboards, and product briefs into a visually searchable galaxy.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    href: "https://example.com/lumen",
-    stack: [SiNextdotjs, SiTailwindcss, SiFigma],
-  },
-
-  {
-    title: "ZULIAM EASYSTORE",
-    description:
-      "Knowledge workspace that maps qualitative insights, moodboards, and product briefs into a visually searchable galaxy.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "An e-commerce store built on Shopify for züliäm to sell footwear products online.",
+    image: zuliamShopify,
     href: "https://byzuliam.com",
-    stack: [SiNextdotjs, SiTailwindcss],
+    stack: [SiShopify, SiDesignernews],
+  },
+  {
+    title: "CakeAnis",
+    description:
+      "Website for a local business owner selling cakes and cookies, featuring a simple online storefront.",
+    image: cakeAnis,
+    href: "https://cakeanis.shop",
+    stack: [SiNextdotjs, SiTypescript, SiWhatsapp],
+  },
+  {
+    title: "Typet",
+    description:
+      "A new platform currently under development — a sneak peek into what’s next.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    href: "https://typet.my",
+    stack: [SiNextdotjs, SiTailwindcss, SiTypescript],
   },
 ];
 
@@ -77,15 +80,16 @@ const cardVariants = {
 export default function Page() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 px-4 py-20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      {/* warm palette glows */}
       <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light dark:opacity-40">
-        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
-        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl" />
+        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#D9C4B0]/15 blur-3xl" />
+        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-[#CADCAE]/12 blur-3xl" />
       </div>
 
       <section className="relative mx-auto flex max-w-6xl flex-col gap-12">
         <header className="mx-auto max-w-3xl text-center">
           <motion.p
-            className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500/80"
+            className="text-sm font-semibold uppercase tracking-[0.3em] text-[#522546]"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -149,22 +153,21 @@ export default function Page() {
                     {project.stack.map((Icon, iconIndex) => (
                       <span
                         key={`${project.title}-icon-${iconIndex}`}
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-xl text-slate-700 shadow-inner shadow-white/40 transition group-hover:shadow-lg group-hover:shadow-blue-500/30 dark:bg-slate-800 dark:text-slate-200 dark:shadow-black/40"
-                        aria-hidden="true"
+                        className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-xl text-slate-700 shadow-inner shadow-white/40 transition group-hover:shadow-[0_6px_16px_0_rgba(217,196,176,0.35)] dark:bg-slate-800 dark:text-slate-200 dark:shadow-black/40"
                       >
                         <Icon />
                       </span>
                     ))}
                   </div>
 
+                  {/* updated warm palette button */}
                   <Link
                     href={project.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-blue-500/60 px-4 py-2 text-sm font-semibold text-blue-600 transition hover:bg-blue-500 hover:text-white dark:border-blue-400/60 dark:text-blue-300 dark:hover:bg-blue-400 dark:hover:text-slate-950"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#D9C4B0] px-4 py-2 text-sm font-semibold text-[#D9C4B0] transition hover:bg-[#D9C4B0] hover:text-slate-900 dark:border-[#D9C4B0] dark:text-[#D9C4B0] dark:hover:bg-[#D9C4B0] dark:hover:text-slate-900"
                   >
                     View project
-                    <span aria-hidden="true"></span>
                   </Link>
                 </div>
               </div>

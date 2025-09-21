@@ -34,6 +34,17 @@ export default function Nav() {
             >
               Home
             </Link>
+
+            <Link
+              className={`border-b-2 border-transparent pb-1 transition-colors ${
+                activeLink === "about" ? "font-bold" : ""
+              } text-gray-700 hover:text-blue-600 dark:text-gray-300`}
+              href="/about"
+              onMouseEnter={() => setActiveLink("about")}
+              onMouseLeave={() => setActiveLink("")}
+            >
+              About
+            </Link>
             <Link
               className={`border-b-2 border-transparent pb-1 transition-colors ${
                 activeLink === "review" ? "font-bold" : ""
@@ -54,16 +65,7 @@ export default function Nav() {
             >
               Projects
             </Link>
-            <Link
-              className={`border-b-2 border-transparent pb-1 transition-colors ${
-                activeLink === "about" ? "font-bold" : ""
-              } text-gray-700 hover:text-blue-600 dark:text-gray-300`}
-              href="/about"
-              onMouseEnter={() => setActiveLink("about")}
-              onMouseLeave={() => setActiveLink("")}
-            >
-              About
-            </Link>
+
             <button
               className="ms-3 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/10"
               onClick={toggle}

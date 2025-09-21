@@ -13,7 +13,7 @@ const logos = [
   { name: "Zuliam", url: "/zuliam.jpeg" },
 ];
 
-const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
+const marqueeLogos = [...logos, ...logos, ...logos];
 
 export default function Company() {
   return (

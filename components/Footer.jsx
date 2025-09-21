@@ -22,10 +22,7 @@ const navigation = [
   {
     title: "Resources",
     links: [
-      {
-        label: "Blog",
-        href: "/blog",
-      },
+      { label: "Blog", href: "/blog" },
       { label: "Docs", href: "/docs" },
     ],
   },
@@ -64,12 +61,17 @@ export default function Footer() {
                 CyA Space
               </span>
             </Link>
+
+            {/* PERSONAL TAGLINE */}
             <p className="max-w-sm text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              Components, strategy, and momentum for teams that want their
-              digital products to feel intentional from day one.
+              I am Hazim a friendly, adaptable engineer who likes to listen
+              first, then build. I focus on clear communication, simple docs,
+              and steady delivery so teams can ship with confidence.
             </p>
+
             <div className="flex items-center gap-3 text-xl text-slate-500 dark:text-slate-300">
-              {/* {socialLinks.map(({ icon: Icon, href, label }) => (
+              {/* Uncomment if you want social icons visible
+              {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
@@ -80,7 +82,8 @@ export default function Footer() {
                 >
                   <Icon />
                 </a>
-              ))} */}
+              ))}
+              */}
             </div>
           </div>
 
@@ -125,13 +128,13 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-slate-200/60 pt-6 text-sm text-slate-500 dark:border-slate-700/60 dark:text-slate-400 sm:flex-row sm:items-center">
-          <p>&copy; {yearLabel} Hazim Aiman, Inc.</p>
+          <p>&copy; {yearLabel} Hazim Aiman.</p>
           <div className="flex items-center gap-6">
             <Link
               href="/terms"
               className="transition hover:text-blue-600 dark:hover:text-blue-300"
             >
-              Terms & Conditions
+              Terms &amp; Conditions
             </Link>
             <Link
               href="/privacy"
