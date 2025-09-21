@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "Eager to explore the development world and continuously learn new technologies to grow.",
   icons: {
-    icons: "../public/profile.jpg",
+    icon: "/metadata.png",
   },
 };
 
