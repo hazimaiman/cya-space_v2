@@ -45,7 +45,6 @@ const experiences = [
   },
 ];
 
-/* ---------- testimonials (Partner voices) ---------- */
 const testimonials = [
   {
     quote:
@@ -56,14 +55,14 @@ const testimonials = [
   },
   {
     quote:
-      "He bridged management and engineering: translated goals into a workable backlog, led the company website build, reviewed code, and made trade-offs easy for non-technical stakeholders.",
+      "Hazim bijak menjadi penghubung antara pihak pengurusan dan pasukan jurutera. Beliau menukar matlamat syarikat kepada tugasan yang jelas, memimpin pembangunan laman web syarikat, menyemak kod, dan memudahkan pilihan untuk pihak yang bukan teknikal.",
     name: "Tuan Haji Awang",
     title: "Technical Director, Tijan Aisyah Telco",
     image: "/Tijan.jpg",
   },
   {
     quote:
-      "As CEO I value clear updates. Hazim explained risks, options, and impact in simple business terms, so decisions and approvals were fast and confident.",
+      "Sebagai CEO, saya menghargai kemas kini yang jelas. Hazim sentiasa menerangkan risiko, pilihan, dan kesan dalam bahasa perniagaan yang mudah difahami. Itu membuat keputusan dan kelulusan lebih cepat serta yakin.",
     name: "Dato' Haji Shahrul",
     title: "CEO, Tijan Aisyah Telco",
     image: "/Tijan.jpg",
@@ -77,7 +76,7 @@ const testimonials = [
   },
   {
     quote:
-      "He built a clean site for Cakeanis / HaiCrunch and explained everything in plain language. As a non-tech founder, that made updates and product changes easy.",
+      "Hazim membangunkan laman web Cakeanis / HaiCrunch dengan kemas dan mudah digunakan. Beliau menerangkan segalanya dengan bahasa yang mudah difahami, menjadikan proses kemas kini dan perubahan produk lebih senang untuk saya sebagai pengasas bukan teknikal.",
     name: "Puan Anis Nissan",
     title: "Founder, Cakeanis / HaiCrunch",
     image: "/HaiCrunch.jpg",
@@ -86,7 +85,6 @@ const testimonials = [
 
 const profile = { name: "Hazim Aiman", avatar: "/profile.jpg" };
 
-/* ---------- helpers ---------- */
 const monthMap = {
   january: 1,
   february: 2,
@@ -220,7 +218,7 @@ function ExperienceTimeline() {
             Experience timeline
           </h2>
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-            Hoverable rows powered by Preline’s timeline component.
+            from intern to present.
           </p>
         </div>
 
@@ -305,23 +303,6 @@ export default function CollaborationsPage() {
             transition={{ duration: 0.6 }}
           >
             Collaborations
-          </motion.p>
-          <motion.h1
-            className="mt-4 text-4xl font-bold text-slate-900 dark:text-slate-100 md:text-5xl"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Work experience at a glance.
-          </motion.h1>
-          <motion.p
-            className="mt-6 text-base text-slate-600 dark:text-slate-300"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Titles, teams, and timelines that have shaped how I collaborate and
-            deliver.
           </motion.p>
         </header>
 

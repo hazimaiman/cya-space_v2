@@ -3,14 +3,14 @@ import Image from "next/image";
 import { FaGithub, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const navigation = [
-  {
-    title: "Product",
-    links: [
-      { label: "Home", href: "/#hero-section" },
-      { label: "Projects", href: "/project" },
-      { label: "Collaborations", href: "/collaborations" },
-    ],
-  },
+  // {
+  //   title: "Product",
+  //   links: [
+  //     { label: "Home", href: "/#hero-section" },
+  //     { label: "Projects", href: "/project" },
+  //     { label: "Collaborations", href: "/collaborations" },
+  //   ],
+  // },
   {
     title: "Personal",
     links: [

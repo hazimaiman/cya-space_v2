@@ -96,23 +96,6 @@ export default function Page() {
           >
             Featured Work
           </motion.p>
-          <motion.h1
-            className="mt-4 text-4xl font-bold text-slate-900 dark:text-slate-100 md:text-5xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Projects engineered with curiosity and polish.
-          </motion.h1>
-          <motion.p
-            className="mt-6 text-base text-slate-600 dark:text-slate-300"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Each build pairs performance-focused architecture with immersive
-            storytelling so clients feel the craft in every interaction.
-          </motion.p>
         </header>
 
         <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
