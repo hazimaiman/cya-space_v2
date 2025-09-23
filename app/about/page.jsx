@@ -16,21 +16,15 @@ import {
 
 const values = [
   {
-    title: "Ship safely, keep it simple",
-    description:
-      "I make sensible choices for auth and data, write clear notes, and ask for reviews. The goal is straightforward: ship safely and keep things easy to maintain.",
-  },
-  {
     title: "Kind, adaptable, always learning",
     description:
-      "I’m stack-agnostic and happy to learn what the team uses. I listen first, ask questions, and improve as we go.",
+      "I am  not tied to a single stack and enjoy picking up whatever the team uses. I listen first, ask thoughtful questions, and keep improving along the way.",
   },
 ];
 
 const stats = [
   { label: "Projects collaborations", value: "7+" },
   { label: "Industries served", value: "Retail, Fashion, Telco" },
-  { label: "Avg. sprint velocity gain", value: "18%" },
 ];
 
 // tech icons (SSR-friendly via react-icons)
@@ -65,16 +59,16 @@ export default function AboutPage() {
             About Hazim Aiman
           </span>
 
-          <h1 className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 md:text-5xl">
+          <h1 className="text-2xl font-bold leading-tight text-slate-900 dark:text-slate-100 md:text-5xl">
             Enthusiastic, adaptable, always learning.
           </h1>
 
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
-            I like to listen first, then build. I’m comfortable picking up new
+          {/* <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+            I like to listen first, then build. I am comfortable picking up new
             stacks, improving what already exists, and documenting as we go so
             teams move calmly and confidently. Security and maintainability
-            matter — and so do people and pace.
-          </p>
+            matter and so do people and pace.
+          </p> */}
 
           <div className="flex flex-wrap justify-center gap-4">
             {/* Primary button — #D9C4B0 */}
@@ -102,11 +96,6 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
               What guides the work
             </h2>
-            <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              Each collaboration is a partnership. I keep rituals lightweight,
-              communication honest, and docs friendly so teams can learn, adapt,
-              and keep shipping.
-            </p>
             <ul className="space-y-5">
               {values.map((value) => (
                 <li
@@ -129,7 +118,6 @@ export default function AboutPage() {
             <dl className="space-y-6">
               {stats.map((stat) => {
                 const accentLabels = new Set([
-                  "Avg. sprint velocity gain",
                   "Projects collaborations",
                   "Industries served",
                 ]);
@@ -151,12 +139,6 @@ export default function AboutPage() {
                     >
                       {stat.value}
                     </dd>
-                    {stat.label === "Avg. sprint velocity gain" && (
-                      <p className="mt-2 text-xs text-slate-600 dark:text-slate-400">
-                        *Average increase in work completed per sprint (e.g.,
-                        story points) versus the team’s earlier baseline.
-                      </p>
-                    )}
                   </div>
                 );
               })}
@@ -183,7 +165,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <p className="text-xs text-slate-600 dark:text-slate-400">
-                Familiar with these languages & tools — and comfortable learning
+                Familiar with these languages & tools and comfortable learning
                 new ones fast.
               </p>
             </div>

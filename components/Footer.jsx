@@ -3,25 +3,10 @@ import Image from "next/image";
 import { FaGithub, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const navigation = [
-  // {
-  //   title: "Product",
-  //   links: [
-  //     { label: "Home", href: "/#hero-section" },
-  //     { label: "Projects", href: "/project" },
-  //     { label: "Collaborations", href: "/collaborations" },
-  //   ],
-  // },
   {
     title: "Personal",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Careers", href: "mailto:hazimaiman.azman@gmail.com" },
       { label: "Contact", href: "mailto:hazimaiman.azman@gmail.com" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
       { label: "Blog", href: "/blog" },
       { label: "Docs", href: "/docs" },
     ],
@@ -45,6 +30,7 @@ export default function Footer() {
     <footer className="border-t border-slate-200/60 bg-white/90 backdrop-blur dark:border-slate-700/60 dark:bg-slate-950/60">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 py-16">
         <div className="grid gap-12 md:grid-cols-[1.2fr,2fr]">
+          {/* LEFT: Brand + summary */}
           <div className="space-y-6">
             <Link
               href="/"
@@ -62,15 +48,14 @@ export default function Footer() {
               </span>
             </Link>
 
-            {/* PERSONAL TAGLINE */}
             <p className="max-w-sm text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               I am Hazim a friendly, adaptable engineer who likes to listen
               first, then build. I focus on clear communication, simple docs,
               and steady delivery so teams can ship with confidence.
             </p>
 
-            <div className="flex items-center gap-3 text-xl text-slate-500 dark:text-slate-300">
-              {/* Uncomment if you want social icons visible
+            {/* Socials (optional) */}
+            {/* <div className="flex items-center gap-3 text-xl text-slate-500 dark:text-slate-300">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -83,11 +68,11 @@ export default function Footer() {
                   <Icon />
                 </a>
               ))}
-              */}
-            </div>
+            </div> */}
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3">
+          {/* RIGHT: PERSONAL only, aligned vertically */}
+          <div className="md:justify-self-end">
             {navigation.map((column) => (
               <div key={column.title} className="space-y-4">
                 <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
@@ -127,6 +112,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* BOTTOM: copyright + links */}
         <div className="flex flex-col items-start justify-between gap-4 border-t border-slate-200/60 pt-6 text-sm text-slate-500 dark:border-slate-700/60 dark:text-slate-400 sm:flex-row sm:items-center">
           <p>&copy; {yearLabel} Hazim Aiman.</p>
           <div className="flex items-center gap-6">
