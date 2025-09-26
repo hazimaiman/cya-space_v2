@@ -34,7 +34,7 @@ const projects = [
     description:
       "Corporate website introducing Tijan Telco’s services, company profile, and industry presence.",
     image: tijanTelco,
-    href: "/",
+    href: "tijan.my",
     stack: [SiReact, SiTailwindcss],
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     description:
       "Website for a local business owner selling cakes and cookies, featuring a simple online storefront.",
     image: cakeAnis,
-    href: "https://cakeanis.shop",
+    href: "haicrunch.my",
     stack: [SiNextdotjs, SiTypescript, SiWhatsapp],
   },
   {
@@ -59,7 +59,7 @@ const projects = [
       "A new platform currently under development — a sneak peek into what’s next.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    href: "https://typet.my",
+    href: "typet.my",
     stack: [SiNextdotjs, SiTailwindcss, SiTypescript],
   },
 ];
