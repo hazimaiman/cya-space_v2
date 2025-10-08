@@ -34,7 +34,7 @@ const projects = [
     description:
       "Corporate website introducing Tijan Telco’s services, company profile, and industry presence.",
     image: tijanTelco,
-    href: "http://tijan.my/",
+    href: "https://tijan.my/",
     stack: [SiReact, SiTailwindcss],
   },
   {
