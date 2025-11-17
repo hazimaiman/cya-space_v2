@@ -34,6 +34,16 @@ export default function Nav() {
             >
               Home
             </Link>
+            <Link
+              className={`border-b-2 border-transparent pb-1 transition-colors ${
+                activeLink === "project" ? "font-bold" : ""
+              } text-gray-700 hover:text-blue-600 dark:text-gray-300`}
+              href="/project"
+              onMouseEnter={() => setActiveLink("project")}
+              onMouseLeave={() => setActiveLink("")}
+            >
+              Projects
+            </Link>
 
             <Link
               className={`border-b-2 border-transparent pb-1 transition-colors ${
@@ -46,24 +56,12 @@ export default function Nav() {
               About
             </Link>
             <Link
-              className={`border-b-2 border-transparent pb-1 transition-colors ${
-                activeLink === "review" ? "font-bold" : ""
-              } text-gray-700 hover:text-blue-600 dark:text-gray-300`}
+              className="hidden pointer-events-none select-none"
+              aria-hidden="true"
+              tabIndex={-1}
               href="/collaborations"
-              onMouseEnter={() => setActiveLink("review")}
-              onMouseLeave={() => setActiveLink("")}
             >
               Collaborations
-            </Link>
-            <Link
-              className={`border-b-2 border-transparent pb-1 transition-colors ${
-                activeLink === "project" ? "font-bold" : ""
-              } text-gray-700 hover:text-blue-600 dark:text-gray-300`}
-              href="/project"
-              onMouseEnter={() => setActiveLink("project")}
-              onMouseLeave={() => setActiveLink("")}
-            >
-              Projects
             </Link>
 
             <button
@@ -72,7 +70,7 @@ export default function Nav() {
               aria-label="Toggle theme"
               title={theme === "dark" ? "Switch to Light" : "Switch to Dark"}
             >
-              {theme === "dark" ? " ☀️ Light" : " 🌑 Dark"}
+              {theme === "dark" ? "Light ☀️" : "Dark 🌑"}
             </button>
           </nav>
         </div>

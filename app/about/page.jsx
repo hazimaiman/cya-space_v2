@@ -1,4 +1,9 @@
-﻿import Link from "next/link";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   SiJavascript,
   SiTypescript,
@@ -43,7 +48,124 @@ const stack = [
   { name: "Supabase", Icon: SiSupabase },
 ];
 
+const testimonials = [
+  {
+    quote:
+      "Hazim leads our digital work website, e-commerce, tooling and docs and keeps choices practical. He turns ideas into shipped features and guides the team with calm, clear steps.",
+    name: "Tuan Amir Hassan",
+    title: "Founder, Zuliam Corp",
+    image: "/zuliam.jpeg",
+  },
+  {
+    quote:
+      "Hazim bijak menjadi penghubung antara pihak pengurusan dan pasukan jurutera. Beliau menukar matlamat syarikat kepada tugasan yang jelas, memimpin pembangunan laman web syarikat, menyemak kod, dan memudahkan pilihan untuk pihak yang bukan teknikal.",
+    name: "Tuan Haji Awang",
+    title: "Technical Director, Tijan Aisyah Telco",
+    image: "/Tijan.jpg",
+  },
+  {
+    quote:
+      "Sebagai CEO, saya menghargai kemas kini yang jelas. Hazim sentiasa menerangkan risiko, pilihan, dan kesan dalam bahasa perniagaan yang mudah difahami. Itu membuat keputusan dan kelulusan lebih cepat serta yakin.",
+    name: "Dato' Haji Shahrul",
+    title: "CEO, Tijan Aisyah Telco",
+    image: "/Tijan.jpg",
+  },
+  {
+    quote:
+      "When we needed support, Hazim delivered solid fixes and simple solutions. He handled surprises calmly and documented steps we could reuse next time.",
+    name: "Tuan Ikhwan",
+    title: "Technical Lead, IMS",
+    image: "/IMS.png",
+  },
+  {
+    quote:
+      "Hazim membangunkan laman web Cakeanis / HaiCrunch dengan kemas dan mudah digunakan. Beliau menerangkan segalanya dengan bahasa yang mudah difahami, menjadikan proses kemas kini dan perubahan produk lebih senang untuk saya sebagai pengasas bukan teknikal.",
+    name: "Puan Anis Nissan",
+    title: "Founder, Cakeanis / HaiCrunch",
+    image: "/HaiCrunch.jpg",
+  },
+];
+
+const carouselVariants = {
+  initial: { opacity: 0, y: 30, scale: 0.98 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  exit: { opacity: 0, y: -20, scale: 0.98 },
+};
+
+function PartnerVoicesCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setActiveIndex((p) => (p + 1) % testimonials.length),
+      6000
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  const { quote, name, title, image } = testimonials[activeIndex];
+
+  return (
+    <section className="relative mx-auto flex max-w-4xl flex-col items-center gap-10 rounded-3xl border border-[#CADCAE]/30 bg-white/80 p-10 shadow-xl shadow-black/10 backdrop-blur-xl dark:border-[#CADCAE]/25 dark:bg-slate-900/70 dark:shadow-black/30">
+      <h3 className="text-center text-sm font-semibold uppercase tracking-[0.35em] text-[#CADCAE]">
+        Partner voices
+      </h3>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeIndex}
+          variants={carouselVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center gap-6 text-center"
+        >
+          <div className="relative h-20 w-20 overflow-hidden rounded-full border border-white/60 bg-white shadow-lg shadow-black/10 dark:border-white/10 dark:bg-slate-800">
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="object-contain"
+              sizes="80px"
+            />
+          </div>
+
+          <p className="text-lg font-medium text-slate-700 dark:text-slate-200">
+            "{quote}"
+          </p>
+
+          <div className="space-y-1 text-sm text-slate-600 dark:text-slate-300">
+            <p className="font-semibold text-[#9CAFAA]">{name}</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
+              {title}
+            </p>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="flex items-center gap-3">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setActiveIndex(i)}
+            className={`h-2.5 w-2.5 rounded-full transition ${
+              i === activeIndex
+                ? "scale-110 bg-[#9CAFAA]"
+                : "bg-slate-300/60 hover:bg-slate-400/80 dark:bg-slate-600 dark:hover:bg-slate-500"
+            }`}
+            aria-label={`Show testimonial ${i + 1}`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function AboutPage() {
+  const [showContactModal, setShowContactModal] = useState(false);
+
   return (
     <main className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 px-4 py-24 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       {/* Soft brand glows (neutral; no blues/purples) */}
@@ -69,19 +191,20 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {/* Primary button - #D9C4B0 */}
             <Link
-              href="/collaborations"
+              href="/project"
               className="inline-flex items-center justify-center rounded-md bg-[#D9C4B0] px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/5 transition hover:brightness-95"
             >
-              Explore collaborations
+              Explore Projects
             </Link>
 
             {/* Outline button - uses #D9C4B0 for border/text and fills on hover */}
-            <Link
-              href="mailto:hazimaiman.azman@gmail.com"
+            <button
+              type="button"
+              onClick={() => setShowContactModal(true)}
               className="inline-flex items-center justify-center rounded-md border border-[#D9C4B0] px-6 py-3 text-sm font-semibold text-[#D9C4B0] transition hover:bg-[#D9C4B0] hover:text-slate-900 dark:border-[#D9C4B0] dark:text-[#D9C4B0] dark:hover:bg-[#D9C4B0] dark:hover:text-slate-900"
             >
               Start a project
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -140,7 +263,7 @@ export default function AboutPage() {
               })}
             </dl>
 
-            {/* Tech logos via react-icons — icons only */}
+            {/* Tech logos via react-icons - icons only */}
             <div className="space-y-3">
               <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-600 dark:text-slate-300">
                 Tech I work with
@@ -167,7 +290,81 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        <PartnerVoicesCarousel />
       </section>
+
+      {showContactModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm"
+          onClick={() => setShowContactModal(false)}
+        >
+          <div
+            className="relative w-full max-w-lg rounded-3xl border border-[#D9C4B0]/30 bg-white p-6 shadow-2xl shadow-black/20 dark:border-[#D9C4B0]/25 dark:bg-slate-900"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-4 flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
+                  About
+                </p>
+                <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-50">
+                  Want to collaborate?
+                </h2>
+              </div>
+              <button
+                type="button"
+                aria-label="Close contact modal"
+                className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800 dark:hover:bg-white/10 dark:hover:text-white"
+                onClick={() => setShowContactModal(false)}
+              >
+                X
+              </button>
+            </div>
+
+            <p className="mb-6 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
+              Want to collaborate with me? Don&apos;t segan-silu to email. I
+              only use Gmail - reach me at either address below.
+            </p>
+
+            <div className="space-y-3">
+              <a
+                href="mailto:hazimaiman.azman@gmail.com"
+                className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 transition hover:border-[#D9C4B0] hover:bg-[#D9C4B0]/10 dark:border-slate-700 dark:hover:border-[#D9C4B0] dark:hover:bg-white/5"
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    Primary
+                  </p>
+                  <p className="text-base font-semibold text-slate-900 dark:text-slate-50">
+                    hazimaiman.azman@gmail.com
+                  </p>
+                </div>
+                <span className="text-sm font-semibold text-[#9CAFAA]">
+                  Email
+                </span>
+              </a>
+
+              <a
+                href="mailto:hazimaiman@zuliam.com"
+                className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 transition hover:border-[#D9C4B0] hover:bg-[#D9C4B0]/10 dark:border-slate-700 dark:hover:border-[#D9C4B0] dark:hover:bg-white/5"
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                    Secondary
+                  </p>
+                  <p className="text-base font-semibold text-slate-900 dark:text-slate-50">
+                    hazimaiman@zuliam.com
+                  </p>
+                </div>
+                <span className="text-sm font-semibold text-[#9CAFAA]">
+                  Email
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
