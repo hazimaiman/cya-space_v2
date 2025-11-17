@@ -19,6 +19,7 @@ import zuliamWebsite from "../../public/zuliam_website.JPG";
 import cakeAnis from "../../public/cakeanis_website.png";
 import tijanTelco from "../../public/tijan_website.JPG";
 import zuliamShopify from "../../public/zuliam_web.png";
+import paws from "../../public/paws.JPG";
 
 const projects = [
   {
@@ -30,6 +31,14 @@ const projects = [
     stack: [SiNextdotjs, SiTailwindcss, SiJavascript],
   },
   {
+    title: "Typet",
+    description:
+      "A new platform to help you track your pets and find lost paws.",
+    image: paws,
+    href: "https://typet.my/",
+    stack: [SiNextdotjs, SiTailwindcss, SiTypescript],
+  },
+  {
     title: "Tijan Telco",
     description:
       "Corporate website introducing Tijan Telco’s services, company profile, and industry presence.",
@@ -38,29 +47,20 @@ const projects = [
     stack: [SiReact, SiTailwindcss],
   },
   {
+    title: "HaiCrunchMY",
+    description:
+      "Website for a local business owner selling cakes and cookies, featuring a simple online storefront.",
+    image: cakeAnis,
+    href: "https://haicrunch.my/",
+    stack: [SiNextdotjs, SiTypescript, SiWhatsapp],
+  },
+  {
     title: "züliäm shopify",
     description:
       "An e-commerce store built on Shopify for züliäm to sell footwear products online.",
     image: zuliamShopify,
     href: "https://byzuliam.com",
     stack: [SiShopify, SiDesignernews],
-  },
-  {
-    title: "CakeAnis",
-    description:
-      "Website for a local business owner selling cakes and cookies, featuring a simple online storefront.",
-    image: cakeAnis,
-    href: "http://haicrunch.my/",
-    stack: [SiNextdotjs, SiTypescript, SiWhatsapp],
-  },
-  {
-    title: "Typet",
-    description:
-      "A new platform currently under development — a sneak peek into what’s next.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    href: "http://typet.my/",
-    stack: [SiNextdotjs, SiTailwindcss, SiTypescript],
   },
 ];
 

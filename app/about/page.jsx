@@ -55,10 +55,6 @@ export default function AboutPage() {
       <section className="relative mx-auto flex max-w-5xl flex-col gap-16">
         {/* Hero */}
         <div className="space-y-10 text-center">
-          <span className="inline-flex items-center justify-center rounded-full border border-[#522546]/60 px-6 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-[#522546] dark:border-[#522546]/60 dark:text-[#522546]">
-            About Hazim Aiman
-          </span>
-
           <h1 className="text-2xl font-bold leading-tight text-slate-900 dark:text-slate-100 md:text-5xl">
             Enthusiastic, adaptable, always learning.
           </h1>
@@ -71,18 +67,18 @@ export default function AboutPage() {
           </p> */}
 
           <div className="flex flex-wrap justify-center gap-4">
-            {/* Primary button — #D9C4B0 */}
+            {/* Primary button - #D9C4B0 */}
             <Link
               href="/collaborations"
-              className="inline-flex items-center justify-center rounded-full bg-[#D9C4B0] px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/5 transition hover:brightness-95"
+              className="inline-flex items-center justify-center rounded-md bg-[#D9C4B0] px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/5 transition hover:brightness-95"
             >
               Explore collaborations
             </Link>
 
-            {/* Outline button — uses #D9C4B0 for border/text and fills on hover */}
+            {/* Outline button - uses #D9C4B0 for border/text and fills on hover */}
             <Link
               href="mailto:hazimaiman.azman@gmail.com"
-              className="inline-flex items-center justify-center rounded-full border border-[#D9C4B0] px-6 py-3 text-sm font-semibold text-[#D9C4B0] transition hover:bg-[#D9C4B0] hover:text-slate-900 dark:border-[#D9C4B0] dark:text-[#D9C4B0] dark:hover:bg-[#D9C4B0] dark:hover:text-slate-900"
+              className="inline-flex items-center justify-center rounded-md border border-[#D9C4B0] px-6 py-3 text-sm font-semibold text-[#D9C4B0] transition hover:bg-[#D9C4B0] hover:text-slate-900 dark:border-[#D9C4B0] dark:text-[#D9C4B0] dark:hover:bg-[#D9C4B0] dark:hover:text-slate-900"
             >
               Start a project
             </Link>
